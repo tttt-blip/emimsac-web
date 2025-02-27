@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation";
 import FloatingCTA from "./components/FloatingCTA";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import { SpeedInsights } from '@vercel/speed-insights/react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   useEffect(() => {
@@ -23,11 +23,12 @@ function App() {
      
         
         {/* Botones de acción flotantes */}
-        <FloatingCTA />
         <Navigation />   
         <Home/>     
-        <Footer 
-        <SpeedInsights />
+        <FloatingCTA />
+
+        <Footer />
+        <SpeedInsights/>
     </div>
   );
 }
