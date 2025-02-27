@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import FloatingCTA from "./components/FloatingCTA";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   useEffect(() => {
@@ -25,7 +26,8 @@ function App() {
         <FloatingCTA />
         <Navigation />   
         <Home/>     
-        <Footer />
+        <Footer 
+        <SpeedInsights />
     </div>
   );
 }
