@@ -1,0 +1,105 @@
+/* src/styles/floatingCTA.css */
+.floating-cta {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    z-index: 1000;
+  }
+  
+  .cta-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cta-button:hover::after {
+    opacity: 1;
+  }
+  
+  .cta-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.4);
+  }
+  
+  .cta-icon {
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Phone Button */
+  .cta-button.phone {
+    background: var(--accent-orange);
+  }
+  
+  .cta-button.phone:hover {
+    background: #e67e22;
+  }
+  
+  /* Chat Button */
+  .cta-button.chat {
+    background: var(--primary-blue);
+  }
+  
+  .cta-button.chat:hover {
+    background: #0d3a6b;
+  }
+  
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .floating-cta {
+      right: 1rem;
+      bottom: 1rem;
+    }
+    
+    .cta-button {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .cta-icon {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Animación de pulso para llamar la atención */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .cta-button.phone:focus {
+    animation: pulse 1s ease infinite;
+  }
